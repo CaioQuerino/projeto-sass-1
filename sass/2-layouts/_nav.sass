@@ -1,0 +1,38 @@
+@use '../1-base/mixins'
+@use '../1-base/variables'
+
+nav
+  @include mixins.mobile
+    display: none
+
+.nav-container
+  display: flex
+  justify-content: space-between
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  padding: 1.5rem 2rem
+  background-color: variables.$black
+  z-index: 10
+
+  @include mixins.mobile
+    padding: 1rem
+
+  .brand
+    color: variables.$light-color
+    font-size: 2rem
+    @include mixins.main-hover
+
+  &-navbar
+    display: flex
+    align-items: center
+    height: 100%
+
+    li
+      margin: 5px 10px
+
+      a
+        color: variables.$light-color
+        @include mixins.main-hover
+
